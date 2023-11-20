@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>씨네파일 ─ 최근Plex현황 ─ 전체</title>
+        <link>undefined</link>
+        <description>undefined</description>
+        <lastBuildDate>Mon, 20 Nov 2023 04:21:12 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[고려 거란 전쟁2]]></title>
+            <link><![CDATA[https://app.plex.tv/desktop#!/server/ea1c8e41ccdaa36700dddfaa8c3d348094b584f1/details?key=%2Flibrary%2Fmetadata%2F379116&autoplay=1]]></link>
+            <guid><![CDATA[https://app.plex.tv/desktop#!/server/ea1c8e41ccdaa36700dddfaa8c3d348094b584f1/details?key=%2Flibrary%2Fmetadata%2F379116&autoplay=1]]></guid>
+            <pubDate>Fri, 17 Nov 2023 12:21:53 GMT</pubDate>
+            <content:encoded><![CDATA[고려 거란 전쟁
+STARRING김동준,최수종,지승현
+DIRECTED BY
+3 에피소드 •드라마 •2023]]></content:encoded>
+            <enclosure url="http://davinci.iptime.org:8888/plexpick/fanart_1.jpg?lastmod=20231119" length="0" type="image/jpg"/>
+        </item>
+        <item>
+            <title><![CDATA[콩 심은 데 콩 나고 팥 심은 데 팥 난다]]></title>
+            <link><![CDATA[https://app.plex.tv/desktop#!/server/ea1c8e41ccdaa36700dddfaa8c3d348094b584f1/details?key=%2Flibrary%2Fmetadata%2F378724&autoplay=1]]></link>
+            <guid><![CDATA[https://app.plex.tv/desktop#!/server/ea1c8e41ccdaa36700dddfaa8c3d348094b584f1/details?key=%2Flibrary%2Fmetadata%2F378724&autoplay=1]]></guid>
+            <pubDate>Fri, 17 Nov 2023 12:21:53 GMT</pubDate>
+            <content:encoded><![CDATA[고려 거란 전쟁2
+STARRING김동준,최수종,지승현
+DIRECTED BY
+3 에피소드 •드라마 •2023]]></content:encoded>
+            <enclosure url="http://davinci.iptime.org:8888/plexpick/fanart_2.jpg?lastmod=20231119" length="0" type="image/jpg"/>
+        </item>
+    </channel>
+</rss>
