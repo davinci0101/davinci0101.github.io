@@ -9,7 +9,7 @@
             }
 		
             function linkToPlex() {
-                var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
+                var mobile = (/iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase())); //안드로이드 제외 현재 미지원 |android
                 var tUrl = "";
 				var pkey = getParameter("pkey");
 				var ptype = getParameter("ptype");
