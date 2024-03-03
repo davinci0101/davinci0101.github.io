@@ -12,6 +12,7 @@
                 var mobile = (/iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase())); //안드로이드 제외 현재 미지원 |android
                 var tUrl = "";
 		if(!mobile) {
+			alert(navigator.maxTouchPoints);
                     if (navigator.maxTouchPoints > 0) {
 			mobile = true;
 		    } else {
