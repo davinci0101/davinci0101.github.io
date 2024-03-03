@@ -16,8 +16,10 @@
 				var pserver = getParameter("pserver");
                 if(mobile) { 
                     tUrl = "plex://preplay/?metadataKey=" + pkey + "&metadataType=" + ptype + "&server=" + pserver;
+			                setTimeout("window.close()", 3000);
 					myWindow = window.open(tUrl, "_self");
 					myWindow.close();
+			                window.close();
                 }else{
                     tUrl = "https://app.plex.tv/desktop#!/server/" + pserver + "/details?key=" + pkey;
 					myWindow = window.open(tUrl, "_self");
