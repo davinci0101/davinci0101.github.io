@@ -7,7 +7,10 @@
                 results = regex.exec(location.search);
                 return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
             }
-		
+            function close()
+            {
+                window.open('','_self').close(); 
+            }
             function linkToPlex() {
                 var mobile = (/iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase())); //안드로이드 제외 현재 미지원 |android
                 var tUrl = "";
@@ -24,10 +27,11 @@
 				var pserver = getParameter("pserver");
                 if(mobile) { 
                     tUrl = "plex://preplay/?metadataKey=" + pkey + "&metadataType=" + ptype + "&server=" + pserver;
-			                setTimeout("window.close()", 3000);
+			                setTimeout("close()", 1000);
 					myWindow = window.open(tUrl, "_self");
-					myWindow.close();
+					close();
 			                window.close();
+			                myWindow.close();
                 }else{
                     tUrl = "https://app.plex.tv/desktop#!/server/" + pserver + "/details?key=" + pkey;
 					myWindow = window.open(tUrl, "_self");
