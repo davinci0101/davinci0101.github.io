@@ -1,0 +1,41 @@
+<html>
+    <head>
+	    <script type="text/javascript">
+            function getParameter(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+            function close()
+            {
+                window.open('','_self').close(); 
+            }
+            function linkToPlex() {
+                var mobile = (/iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase())); //안드로이드 제외 현재 미지원 |android
+                var tUrl = "";
+		if(!mobile) {
+			//alert(navigator.maxTouchPoints);
+                    if (navigator.maxTouchPoints > 0) {
+			mobile = true;
+		    } else {
+			mobile = false;
+		    }    
+		}	
+                if(mobile) { 
+                    tUrl = "plexapp://";
+			                setTimeout("close()", 1000);
+					myWindow = window.open(tUrl, "_self");
+					close();
+			                window.close();
+			                myWindow.close();
+                }else{
+                    tUrl = "https://app.plex.tv";
+					myWindow = window.open(tUrl, "_self");
+                }
+            }
+        </script>
+	</head>
+	<body onload="linkToPlex();">
+	</body>
+</html>
