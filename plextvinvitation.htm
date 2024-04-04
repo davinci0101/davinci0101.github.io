@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en" class="no-anchor"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Plex 가입 설명서</title>
+	<style type="text/css">
+		 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+	</style>
+
+	<!-- Popover Polyfill -->
+	<script src="./plextvinvitation/popover.iife.min.js.다운로드" type="module"></script>
+
+	<!-- Shared styles and scripts, applied to each page -->
+	<link rel="stylesheet" href="./plextvinvitation/styles.css">
+	<script src="./plextvinvitation/scripts.js.다운로드"></script>
+
+	<!-- Page specific styles -->
+	<link rel="stylesheet" href="./plextvinvitation/styles(1).css">
+
+	<!-- Page specific scripts -->
+	<script type="module">
+		const $cardsWrapper = document.querySelector('#cards');
+		const $cards = document.querySelectorAll('.card__content');
+
+		// Pass the number of cards to the CSS because it needs it to add some extra padding.
+		// Without this extra padding, the last card won’t move with the group but slide over it.
+		const numCards = $cards.length;
+		$cardsWrapper.style.setProperty('--numcards', numCards);
+
+		// Each card should only shrink when it’s at the top.
+		// We can’t use exit on the els for this (as they are sticky)
+		// but can track $cardsWrapper instead.
+		const viewTimeline = new ViewTimeline({
+			subject: $cardsWrapper,
+			axis: 'block',
+		});
+
+		$cards.forEach(($card, index0) => {
+			const index = index0 + 1;
+			const reverseIndex = numCards - index0;
+			const reverseIndex0 = numCards - index;
+
+			// Scroll-Linked Animation
+			$card.animate(
+				{
+					// Earlier cards shrink more than later cards
+					transform: [ `scale(1)`, `scale(${1 - (0.1 * reverseIndex0)}`],
+				},
+				{
+					timeline: viewTimeline,
+					fill: 'forwards',
+					rangeStart: `exit-crossing ${CSS.percent(index0 / numCards * 100)}`,
+					rangeEnd: `exit-crossing ${CSS.percent(index / numCards * 100)}`,
+				}
+			);
+		});
+	</script>
+</head>
+
+<body style="background:linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);">
+	<header>
+		<div>
+			<h1 style="font-family:'Nanum Gothic';">Plex.tv 가입 및 공유 초대 수락 방법</h1>
+			<p style="font-family:'Nanum Gothic';">👇 아래로 스크롤하여 내용을 확인하세요</p>
+		</div>
+	</header>
+	<main>
+		<ul id="cards" style="--numcards: 12;">
+			<li class="card" id="card_1">
+				<div class="card__content">
+					<div>
+						<h2 style="font-family:'Nanum Gothic';">Plex.tv 가입방법</h2>
+						<p style="font-family:'Nanum Gothic';">Plex.tv에 무료로 가입하여 공유된 미디어를 사용할 수 있습니다.</p>
+						<p style="font-family:'Nanum Gothic';">현재 국내법(개인정보보호법)에 따라 국내에서 가입이 제한되어 있으므로 VPN프로그램을 통해 다른 나라에서 가입하는 형태로 제한적인 가입이 가능합니다.</p>
+						<p style="font-family:'Nanum Gothic';">본 설명서는 무료vpn을 이용하여 plex.tv에 가입하는 방법을 다루고 있습니다.</p>
+					</div>
+					<figure>
+						<img src="./plextvinvitation/sign_up_large.png" alt="Plex.tv 가입방법">
+					</figure>
+				</div>
+			</li>
+			<li class="card" id="card_2">
+				<div class="card__content">
+					<div>
+						<h2 style="font-family:'Nanum Gothic';">1.검색포탈에서 검색</h2>
+						<p style="font-family:'Nanum Gothic';">검색포탈에서 "browsec vpn"을 검색합니다.</p>
+					</div>
+					<figure>
+						<img src="./plextvinvitation/sign_up2_large.png" alt="검색">
+					</figure>
+				</div>
+			</li>
+			<li class="card" id="card_3">
+				<div class="card__content">
+					<div>
+						<h2 style="font-family:'Nanum Gothic';">2.검색결과 확인</h2>
+						<p style="font-family:'Nanum Gothic';">검색결과 중 크롬 스토어 연결페이지를 선택합니다.</p>
+					</div>
+					<figure>
+						<img src="./plextvinvitation/sign_up3_large.png" alt="검색결과 확인">
+					</figure>
+				</div>
+			</li>
+			<li class="card" id="card_4">
+				<div class="card__content">
+					<div>
+						<h2 style="font-family:'Nanum Gothic';">3.확장 프로그램 설치</h2>
+						<p style="font-family:'Nanum Gothic';">추가 버튼을 클릭하여 확장프로그램을 설치합니다.</p>
+					</div>
+					<figure>
+						<img src="./plextvinvitation/sign_up4_large.png" alt="확장프로그램 설치">
+					</figure>
+				</div>
+			</li>
+			<li class="card" id="card_5">
+				<div class="card__content">
+					<div>
+						<h2 style="font-family:'Nanum Gothic';">4.VPN 실행</h2>
+						<p style="font-family:'Nanum Gothic';">설치된 확장프로그램에서 "Start VPN" 버튼을 클릭합니다.</p>
+						<p style="font-family:'Nanum Gothic';">프로그램이 VPN 연결을 시도합니다.</p>
+					</div>
+					<figure>
+						<img src="./plextvinvitation/sign_up5_large.png" alt="VPN 실행">
+					</figure>
+				</div>
+			</li>
+			<li class="card" id="card_6">
+				<div class="card__content">
+					<div>
+						<h2 style="font-family:'Nanum Gothic';">5.VPN 실행 확인</h2>
+						<p style="font-family:'Nanum Gothic';">VPN이 정상적으로 동작하면 연결된 나라가 표시되고 우측 하단 버튼 부분이 ON으로 표시됩니다.</p>
+					</div>
+					<figure>
+						<img src="./plextvinvitation/sign_up6_large.png" alt="VPN 확인">
+					</figure>
+				</div>
+			</li>
+			<li class="card" id="card_7">
+				<div class="card__content">
+					<div>
+						<h2 style="font-family:'Nanum Gothic';">6.Plex.tv 가입</h2>
+						<p style="font-family:'Nanum Gothic';">www.plex.tv/sign-up 으로 이동합니다.</p>
+						<p style="font-family:'Nanum Gothic';">email 주소 및 패스워드를 입력하고 "sign up with email" 을 클릭합니다.</p>
+					</div>
+					<figure>
+						<img src="./plextvinvitation/sign_up7_large.png" alt="가입">
+					</figure>
+				</div>
+			</li>
+			<li class="card" id="card_8">
+				<div class="card__content">
+					<div>
+						<h2 style="font-family:'Nanum Gothic';">7.Plex.tv 계정 생성</h2>
+						<p style="font-family:'Nanum Gothic';">"Create an Account" 버튼을 클릭하여 계정을 생성합니다.</p>
+					</div>
+					<figure>
+						<img src="./plextvinvitation/sign_up8_large.png" alt="계정 생성">
+					</figure>
+				</div>
+			</li>
+			<li class="card" id="card_9">
+				<div class="card__content">
+					<div>
+						<h2 style="font-family:'Nanum Gothic';">Plex.tv 계정 확인</h2>
+						<p style="font-family:'Nanum Gothic';">계정이 생성되면 자동으로 로그인 되면서 우측 상단에 내용이 표시됩니다.</p>
+						<p style="font-family:'Nanum Gothic';">⚠️ 생성된 계정은 이메일을 통해 확인절차를 완료하여야 합니다.</p>
+					</div>
+					<figure>
+						<img src="./plextvinvitation/sign_up9_large.png" alt="계정 확인">
+					</figure>
+				</div>
+			</li>
+			<li class="card" id="card_10">
+				<div class="card__content">
+					<div>
+						<h2 style="font-family:'Nanum Gothic';">이메일 확인</h2>
+						<p style="font-family:'Nanum Gothic';">Plex.tv 에서 보낸 이메일이 등록된 이메일에 도착해 있을 것입니다.</p>
+						<p style="font-family:'Nanum Gothic';">내용 중 "Verify Email" 버튼을 클릭하여 확인합니다.</p>
+					</div>
+					<figure>
+						<img src="./plextvinvitation/sign_up10_large.png" alt="이메일 확인">
+					</figure>
+				</div>
+			</li>
+			<li class="card" id="card_11">
+				<div class="card__content">
+					<div>
+						<h2 style="font-family:'Nanum Gothic';">공유 수락</h2>
+						<p style="font-family:'Nanum Gothic';">미디어 공유자에게 공유 요청을 하면 공유자는 최초 1회 초대 메일을 발송합니다.</p>
+						<p style="font-family:'Nanum Gothic';">메일 본문에서 "ACCEPT"를 클릭하여 공유를 수락합니다.</p>
+						<p style="font-family:'Nanum Gothic';">이후의 공유는 공유 수락 메일을 신경 쓰지 않으셔도 됩니다.</p>
+					</div>
+					<figure>
+						<img src="./plextvinvitation/sign_up11_large.png" alt="공유 수락">
+					</figure>
+				</div>
+			</li>
+			<li class="card" id="card_12">
+				<div class="card__content">
+					<div>
+						<h2 style="font-family:'Nanum Gothic';">이제 끝입니다!</h2>
+						<p style="font-family:'Nanum Gothic';">수고하셨습니다. 이제부터 즐기세요!!</p>
+					</div>
+					<figure>
+						<img src="./plextvinvitation/sign_up12_large.png" alt="즐기세요">
+					</figure>
+				</div>
+			</li>
+
+		</ul>
+	</main>
+	<aside>
+	    <p style="font-family:'Nanum Gothic';">다른 정보를 얻으시려면...</p>
+		<p style="font-family:'Nanum Gothic';">Plex와 관련한 자세한 정보는 Plex.tv 내의 포럼을 통해 확인할 수 있습니다.</p>
+		<p style="font-family:'Nanum Gothic';">cafe.naver.com/mk802 에서 Kodi/Plex 메뉴를 확인하여 정보를 얻을 수 있습니다.</p>
+
+		<p style="font-family:'Nanum Gothic';">Clien.net의 나스당 내에서 Plex 관련 정보를 얻을 수 있습니다.</p>
+		<p style="font-family:'Nanum Gothic';">reddit에서 각종 Plex 관련 정보를 얻을 수 있습니다.</p>
+
+		<p style="font-family:'Nanum Gothic';">github에서 관련 프로그램을 확인할 수 있습니다.</p>
+	</aside>
+<script defer="" src="./plextvinvitation/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon="{&quot;rayId&quot;:&quot;86eef38c8bae0c9f&quot;,&quot;r&quot;:1,&quot;version&quot;:&quot;2024.3.0&quot;,&quot;token&quot;:&quot;4f175b1ac3204b9ca216125bb4bd6018&quot;}" crossorigin="anonymous"></script>
+
+
+
+</body></html>
