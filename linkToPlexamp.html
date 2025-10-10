@@ -33,7 +33,7 @@
 			                window.close();
 			                myWindow.close();
                 }else{
-                    tUrl = "https://app.plex.tv/desktop#!/server/" + pserver + "/details?key=" + pkey;
+                    tUrl = "https://app.plex.tv/desktop#!/server/" + pserver + "/playlist?key=%2Fplaylists%2F" + pkey;
 					myWindow = window.open(tUrl, "_self");
                 }
             }
@@ -42,3 +42,4 @@
 	<body onload="linkToPlex();">
 	</body>
 </html>
+
